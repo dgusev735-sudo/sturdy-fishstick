@@ -1,0 +1,13 @@
+services:
+  - name: telegram-finance-bot
+    instance_type: free
+    region: fra
+    env:
+      - key: BOT_TOKEN
+        value: REPLACE_WITH_YOUR_BOT_TOKEN
+      - key: PYTHONUNBUFFERED
+        value: "1"
+    docker:
+      build:
+        dockerfile: Dockerfile
+      command: python bot.py
